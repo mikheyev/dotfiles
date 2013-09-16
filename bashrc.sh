@@ -1,7 +1,8 @@
 # Load dotfiles
 
-# Load ssh-agent
+# Load ssh-agent, and configure for github
 eval `ssh-agent`
+alias gitadd='ssh-add ~/.ssh/id_rsa_github'
 
 # initialize tombo-specific PATH
 if [[ "$HOSTNAME" == *tombo* ]]
