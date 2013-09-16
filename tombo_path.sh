@@ -1,3 +1,9 @@
+# Temporary directory variables
+export TEMPDIR=/genefs/MikheyevU/temp
+export TEMP=/genefs/MikheyevU/temp
+export TMP=/genefs/MikheyevU/temp
+
+# System path
 export PATH=$PATH:/apps/MikheyevU/sasha/seamonkey
 export PATH=$PATH:/apps/MikheyevU/bamUtil
 export PATH=$PATH:/apps/MikheyevU/sasha/trim_galore/

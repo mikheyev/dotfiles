@@ -1,5 +1,5 @@
 # Automatically add completion for all aliases to commands having completion functions
-# From:
+# Modified from:
 # http://superuser.com/questions/436314/how-can-i-get-bash-to-perform-tab-completion-for-my-aliases
 function alias_completion {
     local namespace="alias_completion"
@@ -10,7 +10,7 @@ function alias_completion {
     local alias_regex="alias ([^=]+)='(\"[^\"]+\"|[^ ]+)(( +[^ ]+)*)'"
 
     # create array of function completion triggers, keeping multi-word triggers together
-    eval "local completions=($(complete -p | sed -Ene "/$compl_regex/s//'\3'/p"))"
+    eval "local completions=($(complete -p | sed -ne "/$compl_regex/s//'\3'/p"))"
     (( ${#completions[@]} == 0 )) && return 0
 
     # create temporary file for wrapper functions and completions
