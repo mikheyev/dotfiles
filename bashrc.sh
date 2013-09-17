@@ -1,7 +1,11 @@
 # Load dotfiles
 
+# initialize ssh-agent tombo-specific 
+if [[ "$HOSTNAME" == *tombo* ]]
+then
 # Load ssh-agent, and configure for github
-eval `ssh-agent`
+    eval `ssh-agent`
+fi
 alias gitadd='ssh-add ~/.ssh/id_rsa_github'
 
 ####################
@@ -14,11 +18,6 @@ set PROMPT_COMMAND='history -a'
 #extend history
 export HISTSIZE=10000
 
-# initialize tombo-specific PATH
-if [[ "$HOSTNAME" == *tombo* ]]
-then
-    source ~/dotfiles/tombo_path.sh
-fi
 
 # Make a nice prompt
 source ~/dotfiles/prompt.sh

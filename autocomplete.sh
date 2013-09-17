@@ -1,6 +1,8 @@
+#!/bin/bash
 # Automatically add completion for all aliases to commands having completion functions
 # Modified from:
 # http://superuser.com/questions/436314/how-can-i-get-bash-to-perform-tab-completion-for-my-aliases
+set +o posix
 function alias_completion {
     local namespace="alias_completion"
 
@@ -48,6 +50,6 @@ function alias_completion {
         # replace completion trigger by alias
         new_completion="${new_completion% *} $alias_name"
         echo "$new_completion" >> "$tmp_file"
-    done < <(alias -p | sed -Ene "s/$alias_regex/\1 '\2' '\3'/p")
+    done < <(alias -p | sed -ne "s/$alias_regex/\1 '\2' '\3'/p")
     source "$tmp_file" && rm -f "$tmp_file"
 }; alias_completion
