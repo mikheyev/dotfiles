@@ -1,3 +1,4 @@
+#!/bin/bash
 #################################3
 ## File used for defining $PS1
 # Modified from:
@@ -63,7 +64,7 @@ PS1="${UC}\u@${EMW}\h ${EMB}\${NEW_PWD}${EMK}]${EMG}\\$ "
 }
 
 #PROMPT_COMMAND=bash_prompt_command
-bash_prompt
+bash_prompt_command
 
 #Short prompt
 alias short_prompt='export PS1="$ "'
