@@ -71,6 +71,18 @@ bash_prompt
 alias short_prompt='export PS1="$ "'
 
 # colorize prompt
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-alias ls='ls -GFh'
+#unamestr=`uname`
+#if [[ "$unamestr" == 'Linux' ]]
+#then
+#    eval `dircolors ~/dotfiles/dircolors`
+#    alias ls="ls --color=auto"
+#elif [[ "$unamestr" == 'Darwin' ]]
+#then
+#    export CLICOLOR=1
+#    export LSCOLORS=ExFxBxDxCxegedabagacad
+#    alias ls='ls -GFh'
+#fi
+
+#Having installed coreutils on mac os
+eval `dircolors ~/dotfiles/dircolors`
+alias ls="ls --color=auto"
