@@ -1,7 +1,7 @@
 # Load dotfiles
 
 # initialize ssh-agent tombo-specific 
-if [[ "$HOSTNAME" == *tombo* ]]
+if [[ "$HOSTNAME" == *tombo-login* ]]
 then
 # Load ssh-agent, and configure for github
     eval `ssh-agent`
