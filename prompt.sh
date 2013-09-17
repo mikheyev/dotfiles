@@ -60,11 +60,17 @@ local UC=$Y                 # user's color
 # extra backslash in front of \$ to make bash colorize the prompt
 
 #Sasha's Colored Prompt
-PS1="${UC}\u@${EMW}\h ${EMB}\${NEW_PWD}${EMK}]${EMG}\\$ "
+PS1="${UC}\u@${EMW}\h ${EMB}\${NEW_PWD}${EMK} ${EMG}\\$ "
 }
 
 #PROMPT_COMMAND=bash_prompt_command
 bash_prompt_command
+bash_prompt
 
 #Short prompt
 alias short_prompt='export PS1="$ "'
+
+# colorize prompt
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+alias ls='ls -GFh'
