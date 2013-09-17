@@ -63,26 +63,24 @@ local UC=$Y                 # user's color
 PS1="${UC}\u@${EMW}\h ${EMB}\${NEW_PWD}${EMK} ${EMG}\\$ "
 }
 
-#PROMPT_COMMAND=bash_prompt_command
-bash_prompt_command
-bash_prompt
+PROMPT_COMMAND=bash_prompt_command
 
 #Short prompt
 alias short_prompt='export PS1="$ "'
 
 # colorize prompt
-#unamestr=`uname`
-#if [[ "$unamestr" == 'Linux' ]]
-#then
-#    eval `dircolors ~/dotfiles/dircolors`
-#    alias ls="ls --color=auto"
-#elif [[ "$unamestr" == 'Darwin' ]]
-#then
-#    export CLICOLOR=1
-#    export LSCOLORS=ExFxBxDxCxegedabagacad
-#    alias ls='ls -GFh'
-#fi
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]
+then
+   eval `dircolors ~/dotfiles/dircolors`
+   alias ls="ls --color=auto"
+elif [[ "$unamestr" == 'Darwin' ]]
+then
+   # export CLICOLOR=1
+   # export LSCOLORS=ExFxBxDxCxegedabagacad
+   # alias ls='ls -GFh'
+   eval `gdircolors ~/dotfiles/dircolors`
+   alias ls="gls --color=auto"
 
-#Having installed coreutils on mac os
-eval `dircolors ~/dotfiles/dircolors`
-alias ls="ls --color=auto"
+fi
+
