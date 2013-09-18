@@ -19,5 +19,5 @@ source ~/dotfiles/prompt.sh
 source ~/dotfiles/bioinformatic_functions.sh
 
 # make aliases auto-complete
-source ~/dotfiles/autocomplete.sh
+#source ~/dotfiles/autocomplete.sh
 
