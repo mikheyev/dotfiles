@@ -8,13 +8,6 @@
 # fi
 # alias gitadd='ssh-add ~/.ssh/id_rsa_github'
 
-if [[ "$HOSTNAME" == *tombo-login* ]]
-then
-# Load ssh-agent, and configure for github
-    eval `ssh-agent`
-fi
-alias gitadd='ssh-add ~/.ssh/id_rsa_github'
-
 ####################
 # History settings #
 ####################
