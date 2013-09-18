@@ -1,2 +1,4 @@
 # emacs temporary files
 *~
+.gitignore
+.ssh
