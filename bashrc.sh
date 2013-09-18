@@ -1,21 +1,19 @@
 # Load dotfiles
 
 # initialize ssh-agent tombo-specific 
-<<<<<<< HEAD
 # if [[ "$HOSTNAME" == *tombo* ]]
 # then
 # # Load ssh-agent, and configure for github
 #     eval `ssh-agent`
 # fi
 # alias gitadd='ssh-add ~/.ssh/id_rsa_github'
-=======
+
 if [[ "$HOSTNAME" == *tombo-login* ]]
 then
 # Load ssh-agent, and configure for github
     eval `ssh-agent`
 fi
 alias gitadd='ssh-add ~/.ssh/id_rsa_github'
->>>>>>> 3cf41112471f9a26660f7f3d160ad53dca2020a7
 
 ####################
 # History settings #
