@@ -64,6 +64,7 @@ PS1="${UC}\u@${EMW}\h ${EMB}\${NEW_PWD}${EMK} ${EMG}\\$ "
 }
 
 PROMPT_COMMAND=bash_prompt_command
+bash_prompt
 
 #Short prompt
 alias short_prompt='export PS1="$ "'
