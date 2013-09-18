@@ -63,7 +63,11 @@ local UC=$Y                 # user's color
 PS1="${UC}\u@${EMW}\h ${EMB}\${NEW_PWD}${EMK} ${EMG}\\$ "
 }
 
+<<<<<<< HEAD
 export PROMPT_COMMAND=$PROMPT_COMMAND";bash_prompt_command"
+=======
+PROMPT_COMMAND=bash_prompt_command
+>>>>>>> 3cf41112471f9a26660f7f3d160ad53dca2020a7
 bash_prompt
 
 #Short prompt
