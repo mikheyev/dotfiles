@@ -1,0 +1,47 @@
+
+# Scheduler files
+*.o*	# scheduler output files
+*.po*   # scheduler output files for parallel jobs
+STDIN*	# quick and dirty scheduler output files
+*~      # emacs temporary files
+
+# Misc logs
+*.log
+
+# data sets
+## raw reads
+*.fq
+*.fastq
+*.fa
+*.fasta
+## alignments
+*.sam
+*.bam
+*.bai
+*.phy
+## variant calls
+*.vcf
+*.idx
+## Misc
+*.dict
+## phylogenetics
+*.tre
+*.nex
+### MrBayes files
+*.t
+*.p
+*.trprobs
+*.pstat
+*.vstat
+*.parts
+*.mcmc
+*.ckp
+*.ckp~
+# compressed files (by default)
+*.gz
+*.zip
+*.tar
+
+#Data folders
+data/
+alignments/  # alignment folders
