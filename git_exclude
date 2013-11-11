@@ -45,3 +45,9 @@ STDIN*	# quick and dirty scheduler output files
 #Data folders
 data/
 alignments/  # alignment folders
+assemblies/  # assembly folders
+raw/
+trimmed/
+
+#Misc error files
+\.*
