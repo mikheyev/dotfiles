@@ -15,8 +15,7 @@ then
 alias GATK="java -jar /apps/MikheyevU/sasha/GenomeAnalysisTK-2.3-4-g57ea19f/GenomeAnalysisTK.jar"
 alias qqsub="qsub -j y -cwd -q short -l h_vmem=4G -l virtual_free=4G <<< '. $HOME/.bashrc; "
 alias qlsub="qsub -j y -cwd -q long -l h_vmem=4G -l virtual_free=4G <<< '. $HOME/.bashrc; "
-alias qlsubSL6="qsub -j y -cwd -q longSL6 <<< '. $HOME/.bashrc; "
-alias qgsub="qsub -j y -cwd -q genomics <<< '. $HOME/.bashrc; "
+alias qgsub="qsub -j y -cwd -q genomics -l h_vmem=20G -l virtual_free=20G <<< '. $HOME/.bashrc; "
 alias readseq="java -jar /apps/MikheyevU/scripts/readseq.jar"
 fi
 
