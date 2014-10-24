@@ -5,6 +5,11 @@ function N50 () {
 perl -ne 'chomp(); push(@contigs,$_);$total+=$_;END{foreach(sort{$b<=>$a}@contigs){$sum+=$_;$L=$_;if($sum>=$total*0.5){print "TOTAL: $total\nN50 : $L\n";exit;} ;}}' 
 }
 
+function mean_sd () {
+awk '{x[NR]=$0; s+=$0; n++} END{a=s/n; for (i in x){ss += (x[i]-a)^2} sd = sqrt(ss/n); print "total = "s", mean = "s/n ", SD = "sd}'
+}
+
+#compute mean and sd from a list of number from stdin
 
 # 
 
