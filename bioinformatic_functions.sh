@@ -5,6 +5,11 @@ function N50 () {
 perl -ne 'chomp(); push(@contigs,$_);$total+=$_;END{foreach(sort{$b<=>$a}@contigs){$sum+=$_;$L=$_;if($sum>=$total*0.5){print "TOTAL: $total\nN50 : $L\n";exit;} ;}}' 
 }
 
+# call bc from the command line, automatically loading math libraries
+function calc () { 
+	echo "scale=4; "$@ | bc
+}
+
 
 # 
 
