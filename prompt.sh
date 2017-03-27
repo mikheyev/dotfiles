@@ -20,6 +20,10 @@ then
 fi
 }
 
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 bash_prompt() {
 local NONE="\[\033[0m\]"    # unsets color to term's fg color
 
@@ -60,7 +64,7 @@ local UC=$Y                 # user's color
 # extra backslash in front of \$ to make bash colorize the prompt
 
 #Sasha's Colored Prompt
-PS1="${UC}\u@${EMW}\h ${EMB}\${NEW_PWD}${EMK} ${EMG}\\$ "
+PS1="${UC}\u@${EMW}\h ${EMB}\${NEW_PWD}${EMK} ${EMY}$(parse_git_branch) ${EMG}$ "
 }
 
 export PROMPT_COMMAND="bash_prompt_command;$PROMPT_COMMAND"

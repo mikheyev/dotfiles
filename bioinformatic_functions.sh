@@ -14,7 +14,7 @@ awk '{x[NR]=$0; s+=$0; n++} END{a=s/n; for (i in x){ss += (x[i]-a)^2} sd = sqrt(
 }
 
 # initialize tombo-specific aliases
-if [[ "$HOSTNAME" == *tombo-login* ]]
+if [[ "$HOSTNAME" == *sango-login* ]]
 then
 # Load ssh-agent, and configure for github
 alias GATK="java -jar /apps/MikheyevU/sasha/GenomeAnalysisTK-2.3-4-g57ea19f/GenomeAnalysisTK.jar"
@@ -23,6 +23,26 @@ alias qqsub20="qsub -j y -cwd -q short -l h_vmem=20G -l virtual_free=20G <<< '. 
 alias qlsub="qsub -j y -cwd -q long -l h_vmem=4G -l virtual_free=4G <<< '. $HOME/.bashrc; "
 alias qlsub20="qsub -j y -cwd -q long -l h_vmem=20G -l virtual_free=20G <<< '. $HOME/.bashrc; "
 alias qgsub="qsub -j y -cwd -q genomics -l h_vmem=20G -l virtual_free=20G <<< '. $HOME/.bashrc; "
-alias readseq="java -jar /apps/MikheyevU/scripts/readseq.jar"
+alias readseq="java -jar /apps/unit/MikheyevU/scripts/readseq.jar"
 fi
 
+#transpose a file 
+#http://stackoverflow.com/questions/1729824/transpose-a-file-in-bash
+function transpose () { 
+awk '
+{ 
+    for (i=1; i<=NF; i++)  {
+        a[NR,i] = $i
+    }
+}
+NF>p { p = NF }
+END {    
+    for(j=1; j<=p; j++) {
+        str=a[1,j]
+        for(i=2; i<=NR; i++){
+            str=str" "a[i,j];
+        }
+        print str
+    }
+}'
+}
