@@ -1,8 +1,6 @@
 
 # Scheduler files
-*.o*	# scheduler output files
-*.po*   # scheduler output files for parallel jobs
-STDIN*	# quick and dirty scheduler output files
+[0-9]*.out  # scheduler output files
 *~      # emacs temporary files
 
 # Misc logs
@@ -19,6 +17,7 @@ STDIN*	# quick and dirty scheduler output files
 *.bam
 *.bai
 *.phy
+*.sai
 ## variant calls
 *.vcf
 *.idx
@@ -51,3 +50,6 @@ trimmed/
 
 #Misc error files
 \.*
+
+#VCFTools default outputs
+out.*
