@@ -24,3 +24,6 @@ fi
 
 #SLURM commands
 alias sq='squeue -u sasha'
+
+# Enable calculator
+source ~/.zprezto/plugins/calc.plugin.zsh/calc.plugin.zsh
