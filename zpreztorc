@@ -24,16 +24,11 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'emacs' \
-  'history' \
   'directory' \
-  'spectrum' \
   'utility' \
-  'git' \
   'completion' \
+  'git' \
+  'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
   'prompt'
@@ -41,6 +36,8 @@ zstyle ':prezto:load' pmodule \
 #
 # Autosuggestions
 #
+
+zstyle ':prezto:module:autosuggestions' color 'yes'
 
 # Set the query found color.
 zstyle ':prezto:module:autosuggestions:color' found ''

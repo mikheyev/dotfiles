@@ -6,6 +6,12 @@
 #
 
 #
+# Host
+#
+
+export DEFAULT_USER='sasha'
+
+#
 # Browser
 #
 
