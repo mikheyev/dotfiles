@@ -22,5 +22,14 @@ if [[ $TERM = dumb ]]; then
   unset zle_bracketed_paste
 fi
 
+#load modules if on cluster
+if [ $HOST~/sango/ ]; then 
+   module load git/2.3.2 \
+   bedtools/v2.25.0 \
+   samtools/1.2 \
+   bowtie2/2.2.6 \
+   R/3.1.1
+fi  
+
 #SLURM commands
 alias sq='squeue -u sasha'
