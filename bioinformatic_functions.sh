@@ -37,14 +37,8 @@ function transpose () {
 # initialize tombo-specific aliases
 if [[ "$HOSTNAME" == *sango-login* ]]
 then
-# Load ssh-agent, and configure for github
-alias GATK="java -jar /apps/MikheyevU/sasha/GenomeAnalysisTK-2.3-4-g57ea19f/GenomeAnalysisTK.jar"
-alias qqsub="qsub -j y -cwd -q short -l h_vmem=4G -l virtual_free=4G <<< '. $HOME/.bashrc; "
-alias qqsub20="qsub -j y -cwd -q short -l h_vmem=20G -l virtual_free=20G <<< '. $HOME/.bashrc; "
-alias qlsub="qsub -j y -cwd -q long -l h_vmem=4G -l virtual_free=4G <<< '. $HOME/.bashrc; "
-alias qlsub20="qsub -j y -cwd -q long -l h_vmem=20G -l virtual_free=20G <<< '. $HOME/.bashrc; "
-alias qgsub="qsub -j y -cwd -q genomics -l h_vmem=20G -l virtual_free=20G <<< '. $HOME/.bashrc; "
-alias readseq="java -jar /apps/unit/MikheyevU/scripts/readseq.jar"
+	alias GATK="java -jar /apps/MikheyevU/sasha/GenomeAnalysisTK-2.3-4-g57ea19f/GenomeAnalysisTK.jar"
+	alias readseq="java -jar /apps/unit/MikheyevU/scripts/readseq.jar"
 fi
 
 #transpose a file 

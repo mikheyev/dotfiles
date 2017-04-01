@@ -36,3 +36,6 @@ alias sq='squeue -u sasha'
 
 # Enable calculator
 source ~/.zprezto/plugins/calc.plugin.zsh/calc.plugin.zsh
+
+# Bioinformatics
+source ~/dotfiles/bioinformatic_functions.sh
