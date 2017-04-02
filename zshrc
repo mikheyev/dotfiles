@@ -16,12 +16,11 @@ fi
 
 setopt share_history # retrieve history and automatically add commands
 
-#CHECK -- should not be necessary with agnoster
-# # Emacs shell mode doesn't work
-# # http://emacs.stackexchange.com/questions/19848/weird-characters-in-shell-mode-with-zsh
-# if [[ $TERM = dumb ]]; then
-#   unset zle_bracketed_paste
-# fi
+# Emacs shell mode doesn't work
+# http://emacs.stackexchange.com/questions/19848/weird-characters-in-shell-mode-with-zsh
+if [[ $TERM = dumb ]]; then
+  unset zle_bracketed_paste
+fi
 
 # Host-specific configuration
 if [[ $HOST =~ sango ]]; then 
