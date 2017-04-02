@@ -16,23 +16,26 @@ fi
 
 setopt share_history # retrieve history and automatically add commands
 
-# Emacs shell mode doesn't work
-# http://emacs.stackexchange.com/questions/19848/weird-characters-in-shell-mode-with-zsh
-if [[ $TERM = dumb ]]; then
-  unset zle_bracketed_paste
-fi
+#CHECK -- should not be necessary with agnoster
+# # Emacs shell mode doesn't work
+# # http://emacs.stackexchange.com/questions/19848/weird-characters-in-shell-mode-with-zsh
+# if [[ $TERM = dumb ]]; then
+#   unset zle_bracketed_paste
+# fi
 
-#load modules if on cluster
+# Host-specific configuration
 if [[ $HOST =~ sango ]]; then 
    module load git/2.3.2 \
    bedtools/v2.25.0 \
    samtools/1.2 \
    bowtie2/2.2.6 \
    R/3.1.1
-fi  
+    #SLURM aliases
+  alias sq='squeue -u sasha'
 
-#SLURM commands
-alias sq='squeue -u sasha'
+elif [[ $HOST =~ homologous ]]; then
+  path+=(~/bin) # This adds sublime text command 'subl'
+fi
 
 # Enable calculator
 source ~/.zprezto/plugins/calc.plugin.zsh/calc.plugin.zsh
