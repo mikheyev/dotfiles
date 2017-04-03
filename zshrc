@@ -84,3 +84,25 @@ zle -N no-magic-abbrev-expand
 bindkey " " magic-abbrev-expand
 bindkey "^x " no-magic-abbrev-expand
 bindkey -M isearch " " self-insert
+
+
+#  _____   __    ______   _       __________  __________________
+# /__  /  / /   / ____/  | |     / /  _/ __ \/ ____/ ____/_  __/
+#   / /  / /   / __/     | | /| / // // / / / / __/ __/   / /
+#  / /__/ /___/ /___     | |/ |/ // // /_/ / /_/ / /___  / /
+# /____/_____/_____/     |__/|__/___/_____/\____/_____/ /_/
+
+
+zlewidget() {
+  # bindkey KEY to new WIDGET, possibly implemented by optional FUNCTION.
+  # FUNCTION defaults to WIDGET and will be marked for autoload -Uz.
+
+  local key=$1
+  local widget=$2
+  local function=${3:-$2}
+
+  autoload -Uz $function
+  zle -N $widget $function
+  bindkey $key $widget
+}
+zlewidget '^xx' expand-absolute-path
