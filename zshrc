@@ -26,6 +26,7 @@ if [[ $HOST =~ sango ]]; then
    bedtools/v2.25.0 \
    samtools/1.2 \
    bowtie2/2.2.6 \
+   ncbi-blast/2.2.30+ \
    R/3.1.1
     #SLURM aliases
   alias sq='squeue -u sasha'
