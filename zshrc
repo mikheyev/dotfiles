@@ -12,8 +12,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
-
 setopt share_history # retrieve history and automatically add commands
 
 # Emacs shell mode doesn't work
@@ -31,6 +29,9 @@ if [[ $HOST =~ sango ]]; then
    R/3.1.1
     #SLURM aliases
   alias sq='squeue -u sasha'
+    # Sango paths
+    path+=(/apps/unit/MikheyevU/novocraft /apps/unit/MikheyevU/sasha/NextGenMap/bin/ngm-0.4.12/)
+    cdpath+=(/home/s/sasha/src)
 
 elif [[ $HOST =~ homologous ]]; then
   path+=(~/bin) # This adds sublime text command 'subl'
@@ -38,6 +39,10 @@ fi
 
 # Enable calculator
 source ~/.zprezto/plugins/calc.plugin.zsh/calc.plugin.zsh
+
+# Enable parenthesis autopair
+## https://github.com/hlissner/zsh-autopair
+source ~/.zprezto/plugins/zsh-autopair/zsh-autopair.plugin.zsh
 
 # Bioinformatics
 source ~/dotfiles/bioinformatic_functions.sh
