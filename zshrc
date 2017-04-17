@@ -8,8 +8,12 @@
 #
 
 # Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
 setopt share_history # retrieve history and automatically add commands
+setopt auto_cd
 
 # Emacs shell mode doesn't work
 # http://emacs.stackexchange.com/questions/19848/weird-characters-in-shell-mode-with-zsh
