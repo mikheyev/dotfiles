@@ -3,14 +3,40 @@
 #
 # Executes commands at the start of an interactive session.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
+
+AUTOPAIR_INHIBIT_INIT=1 # see https://github.com/hlissner/zsh-autopair/issues/6
+
+# if the init scipt doesn't exist
+if ! zgen saved; then
+    echo "Creating a zgen save"
+
+    # prezto and modules
+    zgen prezto
+    zgen prezto 'directory'
+    zgen prezto 'utility'
+    zgen prezto 'completion'
+    zgen prezto 'git'
+    zgen prezto 'syntax-highlighting'
+    zgen prezto 'history-substring-search'
+    zgen prezto 'autosuggestions'
+    zgen prezto 'prompt'
+
+    # prezto options
+    zgen prezto editor key-bindings 'emacs'
+    zgen prezto prompt theme 'agnoster'
+
+    # load remote pluging
+    zgen load arzzen/calc.plugin.zsh 'calc.plugin.zsh'
+    zgen load hlissner/zsh-autopair 'autopair.zsh'
+
+    zgen save
+
 fi
+
+autopair-init  #fix see above at AUTOPAIR_INHIBIT_INIT=1
 
 setopt share_history # retrieve history and automatically add commands
 
@@ -36,13 +62,6 @@ if [[ $HOST =~ sango ]]; then
 elif [[ $HOST =~ homologous ]]; then
   path+=(~/bin) # This adds sublime text command 'subl'
 fi
-
-# Enable calculator
-source ~/.zprezto/plugins/calc.plugin.zsh/calc.plugin.zsh
-
-# Enable parenthesis autopair
-## https://github.com/hlissner/zsh-autopair
-source ~/.zprezto/plugins/zsh-autopair/zsh-autopair.plugin.zsh
 
 # Bioinformatics
 source ~/dotfiles/bioinformatic_functions.sh
