@@ -31,7 +31,7 @@ if [[ $HOST =~ sango ]]; then
     #SLURM aliases
   alias sq='squeue -u sasha'
     # Sango paths
-    path+=(/apps/unit/MikheyevU/novocraft /apps/unit/MikheyevU/sasha/NextGenMap/bin/ngm-0.4.12/)
+    path+=(/apps/unit/MikheyevU/novocraft /apps/unit/MikheyevU/sasha/NextGenMap/bin/ngm-0.4.12/ /apps/unit/MikheyevU/sasha/bbmap)
     cdpath+=(/home/s/sasha/src)
 
 elif [[ $HOST =~ homologous ]]; then
