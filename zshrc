@@ -36,6 +36,8 @@ if [[ $HOST =~ sango ]]; then
 
 elif [[ $HOST =~ homologous ]]; then
   path+=(~/bin) # This adds sublime text command 'subl'
+  export LC_ALL=en_US.UTF-8
+  export LANG=en_US.UTF-8
 fi
 
 # Enable calculator
