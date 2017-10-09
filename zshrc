@@ -35,9 +35,13 @@ if [[ $HOST =~ sango ]]; then
     cdpath+=(/home/s/sasha/src)
 
 elif [[ $HOST =~ homologous ]]; then
+  # disable version control on checks on sshfs mounted folders for increased speed  
+  zstyle ':vcs_info:*' disable-patterns "$HOME/sango(|/*)"
+  cdpath+=($HOME/sango/home)
   path+=(~/bin) # This adds sublime text command 'subl'
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
+  alias sfs='sshfs login.oist.jp:/home/s/sasha/src/ ~/sango -o auto_cache,reconnect,defer_permissions,noappledouble '
 fi
 
 # Enable calculator
