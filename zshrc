@@ -27,6 +27,7 @@ setopt share_history # retrieve history and automatically add commands
 if [[ $HOST =~ sango ]]; then 
    module use /work/.apps/unit/MikheyevU/.modulefiles
     #SLURM aliases
+  cdpath+=($HOME/src)
   alias sq='squeue -u sasha'
 
 elif [[ $HOST =~ homologous ]]; then
