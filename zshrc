@@ -15,6 +15,8 @@ fi
 # Customize to your needs...
 
 setopt share_history # retrieve history and automatically add commands
+HISTFILE=~/.zsh_history
+SAVEHIST=10000
 
 #CHECK -- should not be necessary with agnoster
 # # Emacs shell mode doesn't work
