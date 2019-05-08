@@ -40,6 +40,7 @@ elif [[ $HOST =~ homologous ]]; then
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
   alias sfs='sshfs login.oist.jp:/home/s/sasha/src/ ~/sango -o auto_cache,reconnect,defer_permissions,noappledouble '
+  alias sfsr='sshfs raijin: ~/raijin -o auto_cache,reconnect,defer_permissions,noappledouble '
 fi
 
 # Enable calculator
@@ -106,4 +107,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
