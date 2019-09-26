@@ -24,6 +24,7 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
+  'editor' \
   'directory' \
   'utility' \
   'completion' \
@@ -46,9 +47,30 @@ zstyle ':prezto:load' pmodule \
 # Editor
 #
 
-# Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'emacs'
+ # Base style.
+  if zstyle -T ':prezto:module:prompt' show-return-val; then
+    zstyle ':prezto:module:editor:info:keymap:primary' format "%(?.${prompt_garrett_color_prompt}.%F{red})❱❱%F{red}❱"
 
+  else
+    zstyle ':prezto:module:editor:info:keymap:primary' format "${prompt_garrett_color_prompt}❱❱%F{red}❱"
+  fi
+
+  # Vim insert mode.
+  zstyle ':prezto:module:editor:info:keymap:primary:insert' format "❰"
+
+  # Vim overwrite mode.
+  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format "%F{red}♺ "
+
+  # Vim normal (command) mode.
+  if zstyle -T ':prezto:module:prompt' show-return-val; then
+    zstyle ':prezto:module:editor:info:keymap:alternate' format "%F{red}❰%(?.${prompt_garrett_color_prompt}.%F{red})❰❰"
+
+  else
+    zstyle ':prezto:module:editor:info:keymap:alternate' format "%F{red}❰${prompt_garrett_color_prompt}❰❰"
+  fi
+
+# Set the key mapping style to 'emacs' or 'vi'.
+zstyle ':prezto:module:editor' key-bindings 'vi'
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
 
@@ -93,7 +115,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'agnoster'
+zstyle ':prezto:module:prompt' theme 'garett'
 
 #
 # Ruby
