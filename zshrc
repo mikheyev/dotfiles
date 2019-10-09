@@ -14,6 +14,9 @@ fi
 
 # Customize to your needs...
 
+bindkey -v #vi key vindings
+export KEYTIMEOUT=1
+
 setopt share_history # retrieve history and automatically add commands
 HISTFILE=~/.zsh_history
 SAVEHIST=10000
@@ -28,9 +31,26 @@ SAVEHIST=10000
 # Host-specific configuration
 if [[ $HOST =~ sango ]]; then
    module use /work/.apps/unit/MikheyevU/.modulefiles
+   source /home/s/sasha/.rvm/scripts/rvm
     #SLURM aliases
   cdpath+=($HOME/src)
+  path+=(~/.local/bin)
   alias sq='squeue -u sasha'
+
+  # >>> conda initialize >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  __conda_setup="$('/apps/unit/MikheyevU/miniconda/3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "/apps/unit/MikheyevU/miniconda/3/etc/profile.d/conda.sh" ]; then
+          . "/apps/unit/MikheyevU/miniconda/3/etc/profile.d/conda.sh"
+      else
+          export PATH="/apps/unit/MikheyevU/miniconda/3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
+  # <<< conda initialize <<<
 
 elif [[ $HOST =~ homologous ]]; then
   # disable version control on checks on sshfs mounted folders for increased speed
