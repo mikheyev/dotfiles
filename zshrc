@@ -118,4 +118,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 #aliases
 alias cookiecut='cookiecutter https://github.com/mikheyev/cookiecutter-snakemake'
 
-
+if [[ $HOST =~ sango ]]; then
+  tmux att -t projects
+fi
