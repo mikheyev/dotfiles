@@ -36,7 +36,7 @@ elif [[ $HOST =~ homologous ]]; then
   # disable version control on checks on sshfs mounted folders for increased speed
   zstyle ':vcs_info:*' disable-patterns "$HOME/sango(|/*)"
   cdpath+=($HOME/sango/home)
-  path+=(~/bin /usr/local/anaconda3/bin) # This adds sublime text command 'subl'
+  path+=(~/bin /usr/local/anaconda3/bin ~/.gem/ruby/2.3.0/bin) # This adds sublime text command 'subl'
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
   alias sfs='sshfs login.oist.jp:/home/s/sasha/src/ ~/sango -o auto_cache,reconnect,defer_permissions,noappledouble '
