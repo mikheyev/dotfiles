@@ -61,6 +61,20 @@ elif [[ $HOST =~ homologous ]]; then
   export LANG=en_US.UTF-8
   alias sfs='sshfs login.oist.jp:/home/s/sasha/src/ ~/sango -o auto_cache,reconnect,defer_permissions,noappledouble '
   alias sfsr='sshfs raijin: ~/raijin -o auto_cache,reconnect,defer_permissions,noappledouble '
+  # >>> conda initialize >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  __conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
+          . "/usr/local/anaconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="/usr/local/anaconda3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
+  # <<< conda initialize <<<
 fi
 
 # Enable calculator
@@ -112,18 +126,3 @@ bindkey " " magic-abbrev-expand
 bindkey "^x " no-magic-abbrev-expand
 bindkey -M isearch " " self-insert
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
