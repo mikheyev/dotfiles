@@ -126,3 +126,6 @@ bindkey " " magic-abbrev-expand
 bindkey "^x " no-magic-abbrev-expand
 bindkey -M isearch " " self-insert
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
+if [[ $HOST =~ sango ]]; then
+  tmux att -t projects
+fi
