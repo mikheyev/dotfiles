@@ -126,12 +126,11 @@ bindkey " " magic-abbrev-expand
 bindkey "^x " no-magic-abbrev-expand
 bindkey -M isearch " " self-insert
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
-<<<<<<< HEAD
+
 if [[ $HOST =~ sango ]]; then
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
   tmux att -t projects
 fi
-=======
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
->>>>>>> 4ca6effaa10dc5e720b232c518af1a57b506e7e6
