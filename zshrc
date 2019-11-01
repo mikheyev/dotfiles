@@ -77,8 +77,6 @@ elif [[ $HOST =~ homologous ]]; then
   # <<< conda initialize <<<
 fi
 
-# Enable calculator
-source ~/.zprezto/plugins/calc.plugin.zsh/calc.plugin.zsh
 
 # Bioinformatics
 source ~/dotfiles/bioinformatic_functions.sh
@@ -131,6 +129,5 @@ if [[ $HOST =~ sango ]]; then
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-  tmux att -t projects
 fi
 
